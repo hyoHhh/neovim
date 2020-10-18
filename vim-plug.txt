@@ -1,0 +1,45 @@
+https://github.com/junegunn/vim-plug
+1
+安装
+
+su - link
+git clone https://github.com/junegunn/vim-plug.git
+cd vim-plug
+
+mkdir -p ~/.local/share/nvim/site/plugged #从vim-plug官方下载下来的插件.vim
+mkdir -p ~/.local/share/nvim/site/plugin #通用的文件夹，可以自己从网上下载插件（name.vim）然后把插件放里面就够了
+mkdir -p ~/.local/share/nvim/site/syntax #有关文本（比如c语言）语法相关的插件
+mkdir -p ~/.local/share/nvim/site/doc #说明文档的
+
+cp plug.vim ~/.local/share/nvim/site/autoload
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+修改neovim配置文件
+
+su - link
+
+vim ~/.config/nvim/init.vim
+1
+2
+3
+添加如下内容：
+
+call plug#begin('~/.local/share/nvim/site/plugged')
+" Plug 'iamcco/markdown-preview.nvim'
+call plug#end()
+1
+2
+3
+检查状态
+
+nvim
+
+:PlugStatus
